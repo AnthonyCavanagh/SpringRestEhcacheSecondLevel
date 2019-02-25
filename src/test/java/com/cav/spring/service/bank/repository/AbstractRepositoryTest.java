@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
@@ -22,11 +22,9 @@ import com.cav.spring.service.bank.model.funds.Funds;
 
 
 @RunWith(SpringRunner.class)
+@ContextConfiguration(locations = { "classpath:springTest.xml" })
 @WebAppConfiguration
-@ContextConfiguration(locations="classpath:springTest.xml") 
 public abstract class AbstractRepositoryTest extends AbstractTest {
-	
-	
 	
 	@Autowired
 	protected BankRepository bankRepository;
